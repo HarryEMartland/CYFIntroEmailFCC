@@ -23,7 +23,7 @@ function mapDeals(deal) {
 }
 
 exports.getDeals = function () {
-    return fetch(pipedriveBaseUrl + 'deals?&user_id=' + USERS.MANCHESTER + '&stage_id=' + STAGES.GENERAL_APPLICATION + '&status=open&start=0&api_token=' + pipedriveKey)
+    return fetch(pipedriveBaseUrl + 'deals?&user_id=' + USERS.MANCHESTER + '&stage_id=' + STAGES.GENERAL_APPLICATION + '&status=open&start=0&api_token=' + pipedriveKey + '&limit=1')
         .then(function (value) {
             return value.json()
         }).then(function (value) {
