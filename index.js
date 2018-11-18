@@ -4,7 +4,7 @@ const process = require("./src/process");
 AWS.config.region = 'eu-west-1';
 
 exports.handler = function (event, context, callback) {
-    return process()
+    return process.default()
         .catch(function (error) {
             console.error(error);
             callback(error, null);
