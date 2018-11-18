@@ -1,0 +1,14 @@
+Hi {{name}},
+ 
+You’ll need to complete a 2-step process before the course begins - Step 1 below.
+ 
+Step 1 of 2: Complete Free Code Camp HTML/CSS Tutorial
+
+- Register and complete the this Free Code Camp Responsive Web Design Certification: https://learn.freecodecamp.org/
+- You don't need to complete the "CSS Grid" or "Build a Survey Form" parts.
+- Once you have completed the tutorials fully, go to your profile on FreeCodeCamp and change all your privacy settings to Public.
+- At the top of the page, click on Show me my public portfolio. From the new windows that opens, copy the URL link. 
+- Reply to this email with a link to your Free Code Academy profile URL link when you’re done. Then we’ll send you **Step 2**.
+
+
+Note: If you don't have access to a computer, please let us know.

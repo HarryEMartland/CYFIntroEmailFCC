@@ -1,26 +1,29 @@
 const Handlebars = require('handlebars');
 const fs = require('fs');
-const showdown = require('showdown');
-const converter = new showdown.Converter();
 
 const introSMSTemplate = Handlebars.compile(fs.readFileSync('src/messages/intro/sms.txt', 'utf8'));
-const introEmailTemplate = Handlebars.compile(fs.readFileSync('src/messages/intro/email.md', 'utf8'));
+const introEmailHtmlTemplate = Handlebars.compile(fs.readFileSync('src/messages/intro/email.html', 'utf8'));
+const introEmailTextTemplate = Handlebars.compile(fs.readFileSync('src/messages/intro/email.txt', 'utf8'));
 const introEmailSubjectTemplate = Handlebars.compile(fs.readFileSync('src/messages/intro/email.subject.txt', 'utf8'));
 
 const instructionsEmailSubjectTemplate = Handlebars.compile(fs.readFileSync('src/messages/instructions/email.subject.txt', 'utf8'));
-const instructionsEmailTemplate = Handlebars.compile(fs.readFileSync('src/messages/instructions/email.md', 'utf8'));
+const instructionsEmailHtmlTemplate = Handlebars.compile(fs.readFileSync('src/messages/instructions/email.html', 'utf8'));
+const instructionsEmailTextTemplate = Handlebars.compile(fs.readFileSync('src/messages/instructions/email.txt', 'utf8'));
 const instructionsSMSTemplate = Handlebars.compile(fs.readFileSync('src/messages/instructions/sms.txt', 'utf8'));
+
+const emailTextFooter = Handlebars.compile(fs.readFileSync('src/messages/footer/email.txt', 'utf8'));
+const emailHtmlFooter = Handlebars.compile(fs.readFileSync('src/messages/footer/email.html', 'utf8'));
 
 exports.getIntroSMS = function (user) {
     return introSMSTemplate(user);
 };
 
 exports.getIntroEmailText = function (user) {
-    return introEmailTemplate(user);
+    return introEmailTextTemplate(user)+emailTextFooter;
 };
 
 exports.getIntroEmailHtml = function (user) {
-    return converter.makeHtml(exports.getIntroEmailText(user))
+    return introEmailHtmlTemplate(user)+emailHtmlFooter;
 };
 
 exports.getIntroEmailSubject = function (user) {
@@ -32,11 +35,11 @@ exports.getInstructionsSMS = function (user) {
 };
 
 exports.getInstructionsEmailText = function (user) {
-    return instructionsEmailTemplate(user);
+    return instructionsEmailTextTemplate(user)+emailTextFooter;
 };
 
 exports.getInstructionsEmailHtml = function (user) {
-    return converter.makeHtml(exports.getInstructionsEmailText(user))
+    return instructionsEmailHtmlTemplate(user)+emailHtmlFooter
 };
 
 exports.getInstructionsEmailSubject = function (user) {

@@ -1,5 +1,0 @@
-Hi {{name}},
- 
-Thanks for your interest in joining CodeYourFuture (CYF), an 8-month full-stack web programming course for refugees, asylum seekers, and other disadvantaged groups.
-
-**We’ll send more details on the 2-step process to join the course**. Please check your Spam or Trash inboxes to make sure you do not miss our emails with instructions for next steps. 
