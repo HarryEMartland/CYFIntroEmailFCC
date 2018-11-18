@@ -1,0 +1,26 @@
+{
+  "name": "CYFApplicationProcessFCC",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "zip": "npm prune --production && zip -r app.zip node_modules index.js",
+    "test": "mocha",
+    "start": "node -e 'require(\"./app.js\").handler(null, null, ()=>{})'"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "handlebars": "^4.0.12",
+    "moment": "^2.20.1",
+    "node-fetch": "^2.3.0",
+    "showdown": "^1.9.0",
+    "twitter": "^1.7.1"
+  },
+  "devDependencies": {
+    "aws-sdk": "^2.353.0",
+    "mocha": "^5.2.0",
+    "proxyquire": "^2.1.0",
+    "sinon": "^7.1.1"
+  }
+}
