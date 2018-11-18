@@ -31,7 +31,8 @@ describe('pipedrive', function () {
                         cc_email: "deal123@pipedrive.com",
                         person_name: "bob",
                         person_id: {
-                            email: [{value: "applicant1@test.com"}]
+                            email: [{value: "applicant1@test.com"}],
+                            phone: [{value: "6545832543"}]
                         },
                         user_id: {
                             email: "london@test.com"
@@ -44,7 +45,8 @@ describe('pipedrive', function () {
                             email:"manchester@test.com"
                         },
                         person_id: {
-                            email: [{value: "applicant2@test.com"}]
+                            email: [{value: "applicant2@test.com"}],
+                            phone: [{value: "32345"}]
                         }
                     }]
                 })
@@ -56,12 +58,14 @@ describe('pipedrive', function () {
                 assert.equal(deals[0].email, "applicant1@test.com");
                 assert.equal(deals[0].cc, "deal123@pipedrive.com");
                 assert.equal(deals[0].ownerEmail, "london@test.com");
+                assert.equal(deals[0].phoneNumber, "6545832543");
 
                 assert.equal(deals[1].id, 87654);
                 assert.equal(deals[1].name, "sandra");
                 assert.equal(deals[1].email, "applicant2@test.com");
                 assert.equal(deals[1].cc, "deal765@pipedrive.com");
                 assert.equal(deals[1].ownerEmail, "manchester@test.com");
+                assert.equal(deals[1].phoneNumber, "32345");
             })
 
         });

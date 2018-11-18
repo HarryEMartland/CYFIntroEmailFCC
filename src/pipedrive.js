@@ -16,6 +16,7 @@ function mapDeals(deal) {
     return {
         id: deal.id,
         email: deal.person_id.email[0].value,
+        phoneNumber: deal.person_id.phone[0].value,
         ownerEmail: deal.user_id.email,
         cc: deal.cc_email,
         name: deal.person_name
