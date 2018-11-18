@@ -1,1 +1,1 @@
-{name}, start learning to code! (1/2)
+{{name}}, start learning to code! (1/2)

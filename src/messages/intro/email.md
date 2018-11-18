@@ -1,4 +1,4 @@
-Hi {name},
+Hi {{name}},
  
 Thanks for your interest in joining CodeYourFuture (CYF), an 8-month full-stack web programming course for refugees, asylum seekers, and other disadvantaged groups.
 

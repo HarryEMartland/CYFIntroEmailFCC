@@ -1,4 +1,4 @@
-Hi {name},
+Hi {{name}},
  
 You’ll need to complete a 2-step process before the course begins - Step 1 below.
  
