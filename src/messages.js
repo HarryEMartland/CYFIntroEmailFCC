@@ -11,8 +11,8 @@ const instructionsEmailHtmlTemplate = Handlebars.compile(fs.readFileSync('src/me
 const instructionsEmailTextTemplate = Handlebars.compile(fs.readFileSync('src/messages/instructions/email.txt', 'utf8'));
 const instructionsSMSTemplate = Handlebars.compile(fs.readFileSync('src/messages/instructions/sms.txt', 'utf8'));
 
-const emailTextFooter = Handlebars.compile(fs.readFileSync('src/messages/footer/email.txt', 'utf8'));
-const emailHtmlFooter = Handlebars.compile(fs.readFileSync('src/messages/footer/email.html', 'utf8'));
+const emailTextFooter = fs.readFileSync('src/messages/footer/email.txt', 'utf8');
+const emailHtmlFooter = fs.readFileSync('src/messages/footer/email.html', 'utf8');
 
 exports.getIntroSMS = function (user) {
     return introSMSTemplate(user);
