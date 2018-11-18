@@ -16,11 +16,18 @@ function mapDeals(deal) {
     return {
         id: deal.id,
         email: deal.person_id.email[0].value,
-        phoneNumber: deal.person_id.phone[0].value,
+        phoneNumber: fixPhoneNumber(deal.person_id.phone[0].value),
         ownerEmail: deal.user_id.email,
         cc: deal.cc_email,
         name: deal.person_name
     }
+}
+
+function fixPhoneNumber(phoneNumber){
+    if (phoneNumber.startsWith('0')) {
+        return phoneNumber.replace('0', '+44')
+    }
+    return phoneNumber;
 }
 
 exports.getDeals = function () {

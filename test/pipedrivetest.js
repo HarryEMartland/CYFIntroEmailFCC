@@ -69,5 +69,28 @@ describe('pipedrive', function () {
             })
 
         });
+
+        it('should convert phone numbers to +44', function () {
+            sandbox.stub(fetch, 'Promise').returns(Promise.resolve({
+                json: () => Promise.resolve({
+                    data: [{
+                        id: 432,
+                        cc_email: "deal123@pipedrive.com",
+                        person_name: "bob",
+                        person_id: {
+                            email: [{value: "applicant1@test.com"}],
+                            phone: [{value: "0765473890"}]
+                        },
+                        user_id: {
+                            email: "london@test.com"
+                        }
+                    }]
+                })
+            }));
+
+            return pipedrive.getDeals().then(function (deals) {
+                assert.equal(deals[0].phoneNumber, "+44765473890");
+            })
+        })
     });
 });
