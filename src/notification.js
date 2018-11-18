@@ -1,7 +1,7 @@
 const AWS = require('aws-sdk');
 
-const SNS = AWS.SNS;
-const SES = AWS.SES;
+const SNS = new AWS.SNS();
+const SES = new AWS.SES();
 
 module.exports.sendEmail = function (to, bcc, from, subject, htmlBody, textBody) {
     const params = {
