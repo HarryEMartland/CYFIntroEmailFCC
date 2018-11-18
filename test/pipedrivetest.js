@@ -34,14 +34,14 @@ describe('pipedrive', function () {
                             email: [{value: "applicant1@test.com"}]
                         },
                         user_id: {
-                            email: [{value: "london@test.com"}]
+                            email: "london@test.com"
                         }
                     }, {
                         id: 87654,
                         cc_email: "deal765@pipedrive.com",
                         person_name: "sandra",
                         user_id: {
-                            email: [{value: "manchester@test.com"}]
+                            email:"manchester@test.com"
                         },
                         person_id: {
                             email: [{value: "applicant2@test.com"}]
